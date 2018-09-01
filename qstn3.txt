@@ -1,0 +1,50 @@
+CREATE TABLE Class(
+    id int NOT NULL,
+    name varchar(255) NOT NULL,
+    no_of_students int,
+    teacher int NOT NULL,
+    PRIMARY KEY (id)   
+)
+****************************************************
+CREATE TABLE Teacher(
+    id int NOT NULL,
+    name varchar(255) NOT NULL,
+    salary DOUBLE,
+    PRIMARY KEY (id)   
+)
+***************************************************
+ALTER TABLE class
+ADD FOREIGN KEY (teacher) REFERENCES teacher(id)
+***************************************************
+CREATE TABLE Student(
+    id int NOT NULL,
+    name varchar(255) NOT NULL,
+    class int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (class) REFERENCES class(id)
+)
+****************************************************
+
+INSERT INTO teacher
+VALUES (1,"imran artwel",5000),
+       (2,"junior artwel",7000)
+****************************************************
+INSERT INTO class
+VALUES (4,"oop",10,1),
+       (5,"db",5,2),
+       (6,"tcp",10,2),
+       (7,"math",20,1),
+       (8,"acc",10,1)
+**************************************************
+INSERT INTO student
+VALUES (1,"imran",4),
+       (2,"junior",5),
+       (3,"naven",4),
+       (4,"poh",7),
+       (5,"thor",8),
+       (6,"amry",5),
+       (7,"raj",8),
+       (8,"temba",6),
+       (9,"hally",4),
+       (10,"doro",7)
+******************************************************
